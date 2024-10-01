@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="ChiTietTinTuc.aspx" />
     <Content Include="css\Style.css" />
+    <Content Include="game_SapXep.aspx" />
     <Content Include="images\Bai-45-4-1.png" />
     <Content Include="images\bai-52-kham_pha.png" />
     <Content Include="images\download.png" />
@@ -90,6 +91,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbcsdl.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="game_SapXep.aspx.cs">
+      <DependentUpon>game_SapXep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="game_SapXep.aspx.designer.cs">
+      <DependentUpon>game_SapXep.aspx</DependentUpon>
     </Compile>
     <Compile Include="Masterpage.Master.cs">
       <DependentUpon>Masterpage.Master</DependentUpon>
