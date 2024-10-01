@@ -69,6 +69,9 @@ namespace Web_BanHangg
     partial void InserttbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
     partial void UpdatetbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
     partial void DeletetbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
+    partial void InserttbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
+    partial void UpdatetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
+    partial void DeletetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
     #endregion
 		
 		public dbcsdlDataContext() : 
@@ -202,6 +205,14 @@ namespace Web_BanHangg
 			get
 			{
 				return this.GetTable<tbGameSapXepCauThanhNgu>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbGameDuoiHinhBatChu> tbGameDuoiHinhBatChus
+		{
+			get
+			{
+				return this.GetTable<tbGameDuoiHinhBatChu>();
 			}
 		}
 	}
@@ -2235,6 +2246,116 @@ namespace Web_BanHangg
 					this._cauthanhngu_dapan = value;
 					this.SendPropertyChanged("cauthanhngu_dapan");
 					this.Oncauthanhngu_dapanChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameDuoiHinhBatChu")]
+	public partial class tbGameDuoiHinhBatChu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _duoihinhbatchu_id;
+		
+		private string _duoihinhbatchu_hinhanh;
+		
+		private string _duoihinhbatchu_dapan;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onduoihinhbatchu_idChanging(int value);
+    partial void Onduoihinhbatchu_idChanged();
+    partial void Onduoihinhbatchu_hinhanhChanging(string value);
+    partial void Onduoihinhbatchu_hinhanhChanged();
+    partial void Onduoihinhbatchu_dapanChanging(string value);
+    partial void Onduoihinhbatchu_dapanChanged();
+    #endregion
+		
+		public tbGameDuoiHinhBatChu()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int duoihinhbatchu_id
+		{
+			get
+			{
+				return this._duoihinhbatchu_id;
+			}
+			set
+			{
+				if ((this._duoihinhbatchu_id != value))
+				{
+					this.Onduoihinhbatchu_idChanging(value);
+					this.SendPropertyChanging();
+					this._duoihinhbatchu_id = value;
+					this.SendPropertyChanged("duoihinhbatchu_id");
+					this.Onduoihinhbatchu_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_hinhanh", DbType="NVarChar(MAX)")]
+		public string duoihinhbatchu_hinhanh
+		{
+			get
+			{
+				return this._duoihinhbatchu_hinhanh;
+			}
+			set
+			{
+				if ((this._duoihinhbatchu_hinhanh != value))
+				{
+					this.Onduoihinhbatchu_hinhanhChanging(value);
+					this.SendPropertyChanging();
+					this._duoihinhbatchu_hinhanh = value;
+					this.SendPropertyChanged("duoihinhbatchu_hinhanh");
+					this.Onduoihinhbatchu_hinhanhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_dapan", DbType="NVarChar(MAX)")]
+		public string duoihinhbatchu_dapan
+		{
+			get
+			{
+				return this._duoihinhbatchu_dapan;
+			}
+			set
+			{
+				if ((this._duoihinhbatchu_dapan != value))
+				{
+					this.Onduoihinhbatchu_dapanChanging(value);
+					this.SendPropertyChanging();
+					this._duoihinhbatchu_dapan = value;
+					this.SendPropertyChanged("duoihinhbatchu_dapan");
+					this.Onduoihinhbatchu_dapanChanged();
 				}
 			}
 		}

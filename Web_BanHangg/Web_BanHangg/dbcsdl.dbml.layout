@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.75" name="dbcsdl">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 11.75" name="dbcsdl">
   <DataContextMoniker Name="/dbcsdlDataContext" />
   <nestedChildShapes>
     <classShape Id="a8f4097a-f0d8-48e8-9fe0-92de8374ab21" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
@@ -78,6 +78,12 @@
       <DataClassMoniker Name="/dbcsdlDataContext/tbGameSapXepCauThanhNgu" />
       <nestedChildShapes>
         <elementListCompartment Id="74fc64dc-a40f-4fd3-b82f-11d106a8323c" absoluteBounds="6.015, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ed27a1e-2c6b-4ff2-96a0-9232c4a28363" absoluteBounds="9.25, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbcsdlDataContext/tbGameDuoiHinhBatChu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1efe4f39-3944-4d7a-b6f2-b2caf9502a31" absoluteBounds="9.265, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

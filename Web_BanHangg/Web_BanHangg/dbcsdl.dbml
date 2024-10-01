@@ -117,4 +117,11 @@
       <Column Name="cauthanhngu_dapan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tbGameDuoiHinhBatChu" Member="tbGameDuoiHinhBatChus">
+    <Type Name="tbGameDuoiHinhBatChu">
+      <Column Name="duoihinhbatchu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="duoihinhbatchu_hinhanh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="duoihinhbatchu_dapan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
