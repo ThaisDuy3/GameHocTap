@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Masterpage.master.cs" Inherits="Web_BanHangg.Masterpage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="banner-container">
+            <asp:Repeater ID="rpBanner" runat="server">
+                <ItemTemplate>
+                    <img class="banner" src='<%#Eval("banner_image") %>' />
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+         <div class="menu">
+            <ul>
+                <li><a href="TinTuc.aspx">Tin tức</a></li> |
+                <li><a href="Web_TrangChu.aspx">Trang chủ</a></li> |
+                <li><a href="#">Quản lý</a></li> |
+                <li><a href="#">Kho hàng</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+          <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+      
+    </form>
+</body>
+</html>

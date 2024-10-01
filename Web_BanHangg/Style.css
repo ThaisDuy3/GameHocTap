@@ -1,0 +1,139 @@
+﻿.banner-container {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu {
+    background-color: #808080;
+    padding: 10px;
+    text-align: center;
+}
+
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .menu ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+            .menu ul li a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                .menu ul li a:hover {
+                    text-decoration: underline;
+                }
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .footer a {
+        color: #ffcc00;
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+/*tin tức*/
+/* Đặt toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Bố cục chính */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Cột bên trái - Loại tin tức */
+.sidebar {
+    width: 10%;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .sidebar ul li {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .sidebar ul li a {
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                display: block;
+                text-align: center;
+            }
+
+                .sidebar ul li a:hover {
+                    color: #007bff;
+                }
+
+/* Cột bên phải - Tin tức */
+.main-content {
+    width: 80%;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.news-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+    .news-item h3 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .news-item p {
+        color: #555;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+.news-detail h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.news-detail p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+}
