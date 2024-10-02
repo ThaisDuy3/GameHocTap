@@ -22,7 +22,7 @@ namespace Web_BanHangg
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dbQuanLyQuanCafe")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dbGame")]
 	public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -39,6 +39,15 @@ namespace Web_BanHangg
     partial void InserttbBaner(tbBaner instance);
     partial void UpdatetbBaner(tbBaner instance);
     partial void DeletetbBaner(tbBaner instance);
+    partial void InserttbGameChinhTa(tbGameChinhTa instance);
+    partial void UpdatetbGameChinhTa(tbGameChinhTa instance);
+    partial void DeletetbGameChinhTa(tbGameChinhTa instance);
+    partial void InserttbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
+    partial void UpdatetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
+    partial void DeletetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
+    partial void InserttbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
+    partial void UpdatetbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
+    partial void DeletetbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
     partial void InserttbHoaDon(tbHoaDon instance);
     partial void UpdatetbHoaDon(tbHoaDon instance);
     partial void DeletetbHoaDon(tbHoaDon instance);
@@ -66,16 +75,10 @@ namespace Web_BanHangg
     partial void InserttbTaiKhoan(tbTaiKhoan instance);
     partial void UpdatetbTaiKhoan(tbTaiKhoan instance);
     partial void DeletetbTaiKhoan(tbTaiKhoan instance);
-    partial void InserttbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
-    partial void UpdatetbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
-    partial void DeletetbGameSapXepCauThanhNgu(tbGameSapXepCauThanhNgu instance);
-    partial void InserttbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
-    partial void UpdatetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
-    partial void DeletetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
     #endregion
 		
 		public dbcsdlDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["dbQuanLyQuanCafeConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["dbGameConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -125,6 +128,30 @@ namespace Web_BanHangg
 			get
 			{
 				return this.GetTable<tbBaner>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbGameChinhTa> tbGameChinhTas
+		{
+			get
+			{
+				return this.GetTable<tbGameChinhTa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbGameDuoiHinhBatChu> tbGameDuoiHinhBatChus
+		{
+			get
+			{
+				return this.GetTable<tbGameDuoiHinhBatChu>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbGameSapXepCauThanhNgu> tbGameSapXepCauThanhNgus
+		{
+			get
+			{
+				return this.GetTable<tbGameSapXepCauThanhNgu>();
 			}
 		}
 		
@@ -197,22 +224,6 @@ namespace Web_BanHangg
 			get
 			{
 				return this.GetTable<tbTaiKhoan>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbGameSapXepCauThanhNgu> tbGameSapXepCauThanhNgus
-		{
-			get
-			{
-				return this.GetTable<tbGameSapXepCauThanhNgu>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbGameDuoiHinhBatChu> tbGameDuoiHinhBatChus
-		{
-			get
-			{
-				return this.GetTable<tbGameDuoiHinhBatChu>();
 			}
 		}
 	}
@@ -642,6 +653,336 @@ namespace Web_BanHangg
 					this._banner_image = value;
 					this.SendPropertyChanged("banner_image");
 					this.Onbanner_imageChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameChinhTa")]
+	public partial class tbGameChinhTa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _gamechinhta_id;
+		
+		private string _gamechinhta_noidung;
+		
+		private string _gamechinhta_dapan;
+		
+		private string _gamechinhta_dapansai;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ongamechinhta_idChanging(int value);
+    partial void Ongamechinhta_idChanged();
+    partial void Ongamechinhta_noidungChanging(string value);
+    partial void Ongamechinhta_noidungChanged();
+    partial void Ongamechinhta_dapanChanging(string value);
+    partial void Ongamechinhta_dapanChanged();
+    partial void Ongamechinhta_dapansaiChanging(string value);
+    partial void Ongamechinhta_dapansaiChanged();
+    #endregion
+		
+		public tbGameChinhTa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int gamechinhta_id
+		{
+			get
+			{
+				return this._gamechinhta_id;
+			}
+			set
+			{
+				if ((this._gamechinhta_id != value))
+				{
+					this.Ongamechinhta_idChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_id = value;
+					this.SendPropertyChanged("gamechinhta_id");
+					this.Ongamechinhta_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_noidung", DbType="NVarChar(MAX)")]
+		public string gamechinhta_noidung
+		{
+			get
+			{
+				return this._gamechinhta_noidung;
+			}
+			set
+			{
+				if ((this._gamechinhta_noidung != value))
+				{
+					this.Ongamechinhta_noidungChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_noidung = value;
+					this.SendPropertyChanged("gamechinhta_noidung");
+					this.Ongamechinhta_noidungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_dapan", DbType="NVarChar(MAX)")]
+		public string gamechinhta_dapan
+		{
+			get
+			{
+				return this._gamechinhta_dapan;
+			}
+			set
+			{
+				if ((this._gamechinhta_dapan != value))
+				{
+					this.Ongamechinhta_dapanChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_dapan = value;
+					this.SendPropertyChanged("gamechinhta_dapan");
+					this.Ongamechinhta_dapanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_dapansai", DbType="NVarChar(MAX)")]
+		public string gamechinhta_dapansai
+		{
+			get
+			{
+				return this._gamechinhta_dapansai;
+			}
+			set
+			{
+				if ((this._gamechinhta_dapansai != value))
+				{
+					this.Ongamechinhta_dapansaiChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_dapansai = value;
+					this.SendPropertyChanged("gamechinhta_dapansai");
+					this.Ongamechinhta_dapansaiChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameDuoiHinhBatChu")]
+	public partial class tbGameDuoiHinhBatChu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _duoihinhbatchu_id;
+		
+		private string _duoihinhbatchu_hinhanh;
+		
+		private string _duoihinhbatchu_dapan;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onduoihinhbatchu_idChanging(int value);
+    partial void Onduoihinhbatchu_idChanged();
+    partial void Onduoihinhbatchu_hinhanhChanging(string value);
+    partial void Onduoihinhbatchu_hinhanhChanged();
+    partial void Onduoihinhbatchu_dapanChanging(string value);
+    partial void Onduoihinhbatchu_dapanChanged();
+    #endregion
+		
+		public tbGameDuoiHinhBatChu()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int duoihinhbatchu_id
+		{
+			get
+			{
+				return this._duoihinhbatchu_id;
+			}
+			set
+			{
+				if ((this._duoihinhbatchu_id != value))
+				{
+					this.Onduoihinhbatchu_idChanging(value);
+					this.SendPropertyChanging();
+					this._duoihinhbatchu_id = value;
+					this.SendPropertyChanged("duoihinhbatchu_id");
+					this.Onduoihinhbatchu_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_hinhanh", DbType="NVarChar(MAX)")]
+		public string duoihinhbatchu_hinhanh
+		{
+			get
+			{
+				return this._duoihinhbatchu_hinhanh;
+			}
+			set
+			{
+				if ((this._duoihinhbatchu_hinhanh != value))
+				{
+					this.Onduoihinhbatchu_hinhanhChanging(value);
+					this.SendPropertyChanging();
+					this._duoihinhbatchu_hinhanh = value;
+					this.SendPropertyChanged("duoihinhbatchu_hinhanh");
+					this.Onduoihinhbatchu_hinhanhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_dapan", DbType="NVarChar(MAX)")]
+		public string duoihinhbatchu_dapan
+		{
+			get
+			{
+				return this._duoihinhbatchu_dapan;
+			}
+			set
+			{
+				if ((this._duoihinhbatchu_dapan != value))
+				{
+					this.Onduoihinhbatchu_dapanChanging(value);
+					this.SendPropertyChanging();
+					this._duoihinhbatchu_dapan = value;
+					this.SendPropertyChanged("duoihinhbatchu_dapan");
+					this.Onduoihinhbatchu_dapanChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameSapXepCauThanhNgu")]
+	public partial class tbGameSapXepCauThanhNgu : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _cauthanhngu_id;
+		
+		private string _cauthanhngu_dapan;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Oncauthanhngu_idChanging(int value);
+    partial void Oncauthanhngu_idChanged();
+    partial void Oncauthanhngu_dapanChanging(string value);
+    partial void Oncauthanhngu_dapanChanged();
+    #endregion
+		
+		public tbGameSapXepCauThanhNgu()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cauthanhngu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int cauthanhngu_id
+		{
+			get
+			{
+				return this._cauthanhngu_id;
+			}
+			set
+			{
+				if ((this._cauthanhngu_id != value))
+				{
+					this.Oncauthanhngu_idChanging(value);
+					this.SendPropertyChanging();
+					this._cauthanhngu_id = value;
+					this.SendPropertyChanged("cauthanhngu_id");
+					this.Oncauthanhngu_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cauthanhngu_dapan", DbType="NVarChar(MAX)")]
+		public string cauthanhngu_dapan
+		{
+			get
+			{
+				return this._cauthanhngu_dapan;
+			}
+			set
+			{
+				if ((this._cauthanhngu_dapan != value))
+				{
+					this.Oncauthanhngu_dapanChanging(value);
+					this.SendPropertyChanging();
+					this._cauthanhngu_dapan = value;
+					this.SendPropertyChanged("cauthanhngu_dapan");
+					this.Oncauthanhngu_dapanChanged();
 				}
 			}
 		}
@@ -2160,202 +2501,6 @@ namespace Web_BanHangg
 					this._taikhoan_ngaysinh = value;
 					this.SendPropertyChanged("taikhoan_ngaysinh");
 					this.Ontaikhoan_ngaysinhChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameSapXepCauThanhNgu")]
-	public partial class tbGameSapXepCauThanhNgu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _cauthanhngu_id;
-		
-		private string _cauthanhngu_dapan;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Oncauthanhngu_idChanging(int value);
-    partial void Oncauthanhngu_idChanged();
-    partial void Oncauthanhngu_dapanChanging(string value);
-    partial void Oncauthanhngu_dapanChanged();
-    #endregion
-		
-		public tbGameSapXepCauThanhNgu()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cauthanhngu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int cauthanhngu_id
-		{
-			get
-			{
-				return this._cauthanhngu_id;
-			}
-			set
-			{
-				if ((this._cauthanhngu_id != value))
-				{
-					this.Oncauthanhngu_idChanging(value);
-					this.SendPropertyChanging();
-					this._cauthanhngu_id = value;
-					this.SendPropertyChanged("cauthanhngu_id");
-					this.Oncauthanhngu_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cauthanhngu_dapan", DbType="NVarChar(MAX)")]
-		public string cauthanhngu_dapan
-		{
-			get
-			{
-				return this._cauthanhngu_dapan;
-			}
-			set
-			{
-				if ((this._cauthanhngu_dapan != value))
-				{
-					this.Oncauthanhngu_dapanChanging(value);
-					this.SendPropertyChanging();
-					this._cauthanhngu_dapan = value;
-					this.SendPropertyChanged("cauthanhngu_dapan");
-					this.Oncauthanhngu_dapanChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameDuoiHinhBatChu")]
-	public partial class tbGameDuoiHinhBatChu : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _duoihinhbatchu_id;
-		
-		private string _duoihinhbatchu_hinhanh;
-		
-		private string _duoihinhbatchu_dapan;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onduoihinhbatchu_idChanging(int value);
-    partial void Onduoihinhbatchu_idChanged();
-    partial void Onduoihinhbatchu_hinhanhChanging(string value);
-    partial void Onduoihinhbatchu_hinhanhChanged();
-    partial void Onduoihinhbatchu_dapanChanging(string value);
-    partial void Onduoihinhbatchu_dapanChanged();
-    #endregion
-		
-		public tbGameDuoiHinhBatChu()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int duoihinhbatchu_id
-		{
-			get
-			{
-				return this._duoihinhbatchu_id;
-			}
-			set
-			{
-				if ((this._duoihinhbatchu_id != value))
-				{
-					this.Onduoihinhbatchu_idChanging(value);
-					this.SendPropertyChanging();
-					this._duoihinhbatchu_id = value;
-					this.SendPropertyChanged("duoihinhbatchu_id");
-					this.Onduoihinhbatchu_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_hinhanh", DbType="NVarChar(MAX)")]
-		public string duoihinhbatchu_hinhanh
-		{
-			get
-			{
-				return this._duoihinhbatchu_hinhanh;
-			}
-			set
-			{
-				if ((this._duoihinhbatchu_hinhanh != value))
-				{
-					this.Onduoihinhbatchu_hinhanhChanging(value);
-					this.SendPropertyChanging();
-					this._duoihinhbatchu_hinhanh = value;
-					this.SendPropertyChanged("duoihinhbatchu_hinhanh");
-					this.Onduoihinhbatchu_hinhanhChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_duoihinhbatchu_dapan", DbType="NVarChar(MAX)")]
-		public string duoihinhbatchu_dapan
-		{
-			get
-			{
-				return this._duoihinhbatchu_dapan;
-			}
-			set
-			{
-				if ((this._duoihinhbatchu_dapan != value))
-				{
-					this.Onduoihinhbatchu_dapanChanging(value);
-					this.SendPropertyChanging();
-					this._duoihinhbatchu_dapan = value;
-					this.SendPropertyChanged("duoihinhbatchu_dapan");
-					this.Onduoihinhbatchu_dapanChanged();
 				}
 			}
 		}

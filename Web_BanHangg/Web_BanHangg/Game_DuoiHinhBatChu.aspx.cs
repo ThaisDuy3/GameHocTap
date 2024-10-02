@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Web.UI;
+using System.Drawing;
+
 
 namespace Web_BanHangg
 {
@@ -41,10 +43,12 @@ namespace Web_BanHangg
             if (checkKetQua != null)
             {
                 lblDapAn.Text = "Chúc mừng! Bạn đã đoán đúng.";
+                lblDapAn.ForeColor = Color.Green;
             }
             else
             {
                 lblDapAn.Text = "Rất tiếc! Đáp án không chính xác.";
+                lblDapAn.ForeColor = Color.Red;
             }
         }
 

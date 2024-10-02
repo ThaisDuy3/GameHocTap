@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 namespace Web_BanHangg
 {
@@ -34,10 +35,12 @@ namespace Web_BanHangg
             if(checkKetQua.Count()>0)
             {
                 lblDapAn.Text = "Kết quả đã đúng";
+                lblDapAn.ForeColor = Color.Green;
             }
             else
             {
                 lblDapAn.Text = "Kết quả sai, nhập lại";
+                lblDapAn.ForeColor = Color.Red;
             }
 
         }
