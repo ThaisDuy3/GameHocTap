@@ -11,7 +11,7 @@ namespace Web_BanHangg
 {
 
 
-    public partial class Game_DuoiHinhBatChu
+    public partial class GameChinhTa
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace Web_BanHangg
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// imgHinhDaiDien control.
+        /// lblNoiDung control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgHinhDaiDien;
+        protected global::System.Web.UI.WebControls.Label lblNoiDung;
 
         /// <summary>
-        /// txtKetQua control.
+        /// txtLoiSai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtKetQua;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden txtLoiSai;
 
         /// <summary>
         /// btnKiemTra control.
@@ -51,12 +51,12 @@ namespace Web_BanHangg
         protected global::System.Web.UI.WebControls.Button btnKiemTra;
 
         /// <summary>
-        /// lblDapAn control.
+        /// lblThongBao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDapAn;
+        protected global::System.Web.UI.WebControls.Label lblThongBao;
     }
 }

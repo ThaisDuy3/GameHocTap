@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbGame" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=MSI\TD;Initial Catalog=dbGame;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbGameConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbQuanLyQuanCafe" Class="dbcsdlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-NHNPGPRA\SQLHUNG;Initial Catalog=dbQuanLyQuanCafe;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbQuanLyQuanCafeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tbBan" Member="tbBans">
     <Type Name="tbBan">
       <Column Name="ban_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -24,14 +24,6 @@
     <Type Name="tbBaner">
       <Column Name="banner_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="banner_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tbGameChinhTa" Member="tbGameChinhTas">
-    <Type Name="tbGameChinhTa">
-      <Column Name="gamechinhta_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="gamechinhta_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="gamechinhta_dapan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="gamechinhta_dapansai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbGameDuoiHinhBatChu" Member="tbGameDuoiHinhBatChus">
@@ -130,6 +122,14 @@
       <Column Name="taikhoan_hinhanh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="taikhoan_gioitinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="taikhoan_ngaysinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbGameChinhTa" Member="tbGameChinhTas">
+    <Type Name="tbGameChinhTa">
+      <Column Name="gamechinhta_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="gamechinhta_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="gamechinhta_dapansai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="gamechinhta_dapandung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
