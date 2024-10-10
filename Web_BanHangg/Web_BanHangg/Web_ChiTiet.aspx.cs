@@ -12,7 +12,7 @@ namespace Web_BanHangg
         dbcsdlDataContext db = new dbcsdlDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["sanpham_id"]);
+            int id = Convert.ToInt32(Request.Params["sanpham_id"]);
             var getData = from sp in db.tbSanPhams where sp.sanpham_id == id select sp;
             rpSanPHamChiTiet.DataSource = getData;
             rpSanPHamChiTiet.DataBind();

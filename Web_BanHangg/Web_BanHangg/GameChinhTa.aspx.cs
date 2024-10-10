@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
 
 namespace Web_BanHangg
 {
@@ -43,7 +44,7 @@ namespace Web_BanHangg
             {
                 // Lấy các từ sai và đúng từ cơ sở dữ liệu
                 string[] dapAnSai = cauChinhTa.gamechinhta_dapansai.Split(',');
-                string[] dapAnDung = cauChinhTa.gamechinhta_dapandung.Split(',');
+                string[] dapAnDung = cauChinhTa.gamechinhta_dapan.Split(',');
 
                 // Lấy các từ người dùng đã chọn từ hidden field
                 string userInput = txtLoiSai.Value;  // Các từ mà người dùng đã chọn
@@ -84,10 +85,14 @@ namespace Web_BanHangg
                 if (allCorrect)
                 {
                     lblThongBao.Text = "Kết quả đã đúng! Đáp án đúng là: " + string.Join(", ", dapAnDung) ;
+                    //lblThongBao.ForeColor = Color.Green;
+                    lblThongBao.CssClass = "lblThongBao show";
                 }
                 else
                 {
                     lblThongBao.Text = "Kết quả sai! Đáp án đúng là: " + string.Join(", ", dapAnDung);
+                    //lblThongBao.ForeColor = Color.Red;
+                    lblThongBao.CssClass = "lblThongBao show error";
                 }
             }
         }

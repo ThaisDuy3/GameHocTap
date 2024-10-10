@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web_BanHangg
-{
-
-
-    public partial class GameChinhTa
-    {
-
+namespace Web_BanHangg {
+    
+    
+    public partial class GameChinhTa {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Web_BanHangg
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// lblNoiDung control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Web_BanHangg
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNoiDung;
-
+        
         /// <summary>
         /// txtLoiSai control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace Web_BanHangg
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden txtLoiSai;
-
+        
         /// <summary>
         /// btnKiemTra control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace Web_BanHangg
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnKiemTra;
-
+        
         /// <summary>
         /// lblThongBao control.
         /// </summary>

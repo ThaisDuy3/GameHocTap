@@ -39,6 +39,9 @@ namespace Web_BanHangg
     partial void InserttbBaner(tbBaner instance);
     partial void UpdatetbBaner(tbBaner instance);
     partial void DeletetbBaner(tbBaner instance);
+    partial void InserttbGameChinhTa(tbGameChinhTa instance);
+    partial void UpdatetbGameChinhTa(tbGameChinhTa instance);
+    partial void DeletetbGameChinhTa(tbGameChinhTa instance);
     partial void InserttbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
     partial void UpdatetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
     partial void DeletetbGameDuoiHinhBatChu(tbGameDuoiHinhBatChu instance);
@@ -72,13 +75,10 @@ namespace Web_BanHangg
     partial void InserttbTaiKhoan(tbTaiKhoan instance);
     partial void UpdatetbTaiKhoan(tbTaiKhoan instance);
     partial void DeletetbTaiKhoan(tbTaiKhoan instance);
-    partial void InserttbGameChinhTa(tbGameChinhTa instance);
-    partial void UpdatetbGameChinhTa(tbGameChinhTa instance);
-    partial void DeletetbGameChinhTa(tbGameChinhTa instance);
     #endregion
 		
 		public dbcsdlDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["dbQuanLyQuanCafeConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["dbQuanLyQuanCafeConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -128,6 +128,14 @@ namespace Web_BanHangg
 			get
 			{
 				return this.GetTable<tbBaner>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbGameChinhTa> tbGameChinhTas
+		{
+			get
+			{
+				return this.GetTable<tbGameChinhTa>();
 			}
 		}
 		
@@ -216,14 +224,6 @@ namespace Web_BanHangg
 			get
 			{
 				return this.GetTable<tbTaiKhoan>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbGameChinhTa> tbGameChinhTas
-		{
-			get
-			{
-				return this.GetTable<tbGameChinhTa>();
 			}
 		}
 	}
@@ -653,6 +653,140 @@ namespace Web_BanHangg
 					this._banner_image = value;
 					this.SendPropertyChanged("banner_image");
 					this.Onbanner_imageChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameChinhTa")]
+	public partial class tbGameChinhTa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _gamechinhta_id;
+		
+		private string _gamechinhta_noidung;
+		
+		private string _gamechinhta_dapan;
+		
+		private string _gamechinhta_dapansai;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ongamechinhta_idChanging(int value);
+    partial void Ongamechinhta_idChanged();
+    partial void Ongamechinhta_noidungChanging(string value);
+    partial void Ongamechinhta_noidungChanged();
+    partial void Ongamechinhta_dapanChanging(string value);
+    partial void Ongamechinhta_dapanChanged();
+    partial void Ongamechinhta_dapansaiChanging(string value);
+    partial void Ongamechinhta_dapansaiChanged();
+    #endregion
+		
+		public tbGameChinhTa()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int gamechinhta_id
+		{
+			get
+			{
+				return this._gamechinhta_id;
+			}
+			set
+			{
+				if ((this._gamechinhta_id != value))
+				{
+					this.Ongamechinhta_idChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_id = value;
+					this.SendPropertyChanged("gamechinhta_id");
+					this.Ongamechinhta_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_noidung", DbType="NVarChar(MAX)")]
+		public string gamechinhta_noidung
+		{
+			get
+			{
+				return this._gamechinhta_noidung;
+			}
+			set
+			{
+				if ((this._gamechinhta_noidung != value))
+				{
+					this.Ongamechinhta_noidungChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_noidung = value;
+					this.SendPropertyChanged("gamechinhta_noidung");
+					this.Ongamechinhta_noidungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_dapan", DbType="NVarChar(MAX)")]
+		public string gamechinhta_dapan
+		{
+			get
+			{
+				return this._gamechinhta_dapan;
+			}
+			set
+			{
+				if ((this._gamechinhta_dapan != value))
+				{
+					this.Ongamechinhta_dapanChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_dapan = value;
+					this.SendPropertyChanged("gamechinhta_dapan");
+					this.Ongamechinhta_dapanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_dapansai", DbType="NVarChar(MAX)")]
+		public string gamechinhta_dapansai
+		{
+			get
+			{
+				return this._gamechinhta_dapansai;
+			}
+			set
+			{
+				if ((this._gamechinhta_dapansai != value))
+				{
+					this.Ongamechinhta_dapansaiChanging(value);
+					this.SendPropertyChanging();
+					this._gamechinhta_dapansai = value;
+					this.SendPropertyChanged("gamechinhta_dapansai");
+					this.Ongamechinhta_dapansaiChanged();
 				}
 			}
 		}
@@ -2367,140 +2501,6 @@ namespace Web_BanHangg
 					this._taikhoan_ngaysinh = value;
 					this.SendPropertyChanged("taikhoan_ngaysinh");
 					this.Ontaikhoan_ngaysinhChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbGameChinhTa")]
-	public partial class tbGameChinhTa : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _gamechinhta_id;
-		
-		private string _gamechinhta_noidung;
-		
-		private string _gamechinhta_dapansai;
-		
-		private string _gamechinhta_dapandung;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Ongamechinhta_idChanging(int value);
-    partial void Ongamechinhta_idChanged();
-    partial void Ongamechinhta_noidungChanging(string value);
-    partial void Ongamechinhta_noidungChanged();
-    partial void Ongamechinhta_dapansaiChanging(string value);
-    partial void Ongamechinhta_dapansaiChanged();
-    partial void Ongamechinhta_dapandungChanging(string value);
-    partial void Ongamechinhta_dapandungChanged();
-    #endregion
-		
-		public tbGameChinhTa()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int gamechinhta_id
-		{
-			get
-			{
-				return this._gamechinhta_id;
-			}
-			set
-			{
-				if ((this._gamechinhta_id != value))
-				{
-					this.Ongamechinhta_idChanging(value);
-					this.SendPropertyChanging();
-					this._gamechinhta_id = value;
-					this.SendPropertyChanged("gamechinhta_id");
-					this.Ongamechinhta_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_noidung", DbType="NVarChar(MAX)")]
-		public string gamechinhta_noidung
-		{
-			get
-			{
-				return this._gamechinhta_noidung;
-			}
-			set
-			{
-				if ((this._gamechinhta_noidung != value))
-				{
-					this.Ongamechinhta_noidungChanging(value);
-					this.SendPropertyChanging();
-					this._gamechinhta_noidung = value;
-					this.SendPropertyChanged("gamechinhta_noidung");
-					this.Ongamechinhta_noidungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_dapansai", DbType="NVarChar(MAX)")]
-		public string gamechinhta_dapansai
-		{
-			get
-			{
-				return this._gamechinhta_dapansai;
-			}
-			set
-			{
-				if ((this._gamechinhta_dapansai != value))
-				{
-					this.Ongamechinhta_dapansaiChanging(value);
-					this.SendPropertyChanging();
-					this._gamechinhta_dapansai = value;
-					this.SendPropertyChanged("gamechinhta_dapansai");
-					this.Ongamechinhta_dapansaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gamechinhta_dapandung", DbType="NVarChar(MAX)")]
-		public string gamechinhta_dapandung
-		{
-			get
-			{
-				return this._gamechinhta_dapandung;
-			}
-			set
-			{
-				if ((this._gamechinhta_dapandung != value))
-				{
-					this.Ongamechinhta_dapandungChanging(value);
-					this.SendPropertyChanging();
-					this._gamechinhta_dapandung = value;
-					this.SendPropertyChanged("gamechinhta_dapandung");
-					this.Ongamechinhta_dapandungChanged();
 				}
 			}
 		}
