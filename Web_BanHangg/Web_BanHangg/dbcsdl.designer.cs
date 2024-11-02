@@ -226,6 +226,22 @@ namespace Web_BanHangg
 				return this.GetTable<tbTaiKhoan>();
 			}
 		}
+		
+		public System.Data.Linq.Table<tbKhoiLop> tbKhoiLops
+		{
+			get
+			{
+				return this.GetTable<tbKhoiLop>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbManGame> tbManGames
+		{
+			get
+			{
+				return this.GetTable<tbManGame>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbBan")]
@@ -2522,6 +2538,132 @@ namespace Web_BanHangg
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbKhoiLop")]
+	public partial class tbKhoiLop
+	{
+		
+		private int _khoilop_id;
+		
+		private string _khoilop_khoi;
+		
+		public tbKhoiLop()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoilop_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int khoilop_id
+		{
+			get
+			{
+				return this._khoilop_id;
+			}
+			set
+			{
+				if ((this._khoilop_id != value))
+				{
+					this._khoilop_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoilop_khoi", DbType="NVarChar(MAX)")]
+		public string khoilop_khoi
+		{
+			get
+			{
+				return this._khoilop_khoi;
+			}
+			set
+			{
+				if ((this._khoilop_khoi != value))
+				{
+					this._khoilop_khoi = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbManGame")]
+	public partial class tbManGame
+	{
+		
+		private int _mangame_id;
+		
+		private string _mangame_man;
+		
+		private System.Nullable<int> _khoilop_id;
+		
+		private string _khoilop_khoi;
+		
+		public tbManGame()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mangame_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int mangame_id
+		{
+			get
+			{
+				return this._mangame_id;
+			}
+			set
+			{
+				if ((this._mangame_id != value))
+				{
+					this._mangame_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mangame_man", DbType="NVarChar(MAX)")]
+		public string mangame_man
+		{
+			get
+			{
+				return this._mangame_man;
+			}
+			set
+			{
+				if ((this._mangame_man != value))
+				{
+					this._mangame_man = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoilop_id", DbType="Int")]
+		public System.Nullable<int> khoilop_id
+		{
+			get
+			{
+				return this._khoilop_id;
+			}
+			set
+			{
+				if ((this._khoilop_id != value))
+				{
+					this._khoilop_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khoilop_khoi", DbType="NVarChar(MAX)")]
+		public string khoilop_khoi
+		{
+			get
+			{
+				return this._khoilop_khoi;
+			}
+			set
+			{
+				if ((this._khoilop_khoi != value))
+				{
+					this._khoilop_khoi = value;
+				}
 			}
 		}
 	}

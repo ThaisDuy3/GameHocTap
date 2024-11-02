@@ -78,7 +78,9 @@
     <Content Include="images\download.png" />
     <Content Include="TinTuc.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebManGame.aspx" />
     <Content Include="Web_ChiTiet.aspx" />
+    <Content Include="Web_DangNhap.aspx" />
     <Content Include="Web_TrangChu.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -130,12 +132,26 @@
     <Compile Include="TinTuc.aspx.designer.cs">
       <DependentUpon>TinTuc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebManGame.aspx.cs">
+      <DependentUpon>WebManGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebManGame.aspx.designer.cs">
+      <DependentUpon>WebManGame.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_ChiTiet.aspx.cs">
       <DependentUpon>Web_ChiTiet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Web_ChiTiet.aspx.designer.cs">
       <DependentUpon>Web_ChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web_DangNhap.aspx.cs">
+      <DependentUpon>Web_DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_DangNhap.aspx.designer.cs">
+      <DependentUpon>Web_DangNhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web_TrangChu.aspx.cs">
       <DependentUpon>Web_TrangChu.aspx</DependentUpon>

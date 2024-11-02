@@ -10,7 +10,7 @@
 namespace Web_BanHangg {
     
     
-    public partial class GameChinhTa {
+    public partial class WebManGame {
         
         /// <summary>
         /// form1 control.
@@ -22,48 +22,30 @@ namespace Web_BanHangg {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblQuestionCount control.
+        /// imgProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuestionCount;
+        protected global::System.Web.UI.WebControls.Image imgProfile;
         
         /// <summary>
-        /// lblNoiDung control.
+        /// lblUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoiDung;
+        protected global::System.Web.UI.WebControls.Label lblUsername;
         
         /// <summary>
-        /// txtLoiSai control.
+        /// rpManGame control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden txtLoiSai;
-        
-        /// <summary>
-        /// btnKiemTra control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnKiemTra;
-        
-        /// <summary>
-        /// lblThongBao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblThongBao;
+        protected global::System.Web.UI.WebControls.Repeater rpManGame;
     }
 }

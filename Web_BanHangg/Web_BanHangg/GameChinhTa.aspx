@@ -7,17 +7,17 @@
     <title>Game Chính Tả</title>
     <style>
         a:active {
-            color:blue;
+            color:black;
         }
         a:visited {
-            color:blue;
+            color:black;
         }
         a:hover {
-            color:green;
+            color:lightblue;
         }
         /* Lớp CSS cho từ đã chọn */
         .selected {
-            color: green !important; /* Màu xanh lá cây khi được chọn */
+            color: lightblue !important; /* Màu xanh lá cây khi được chọn */
         }
         body{
             background-image: url('images/background-letter.png');
@@ -33,7 +33,7 @@
             background-color: #fff6a4;
         }
         .container h1{
-             color: red;
+            color: red;
             font-size: 32px;
         }
         .word-container {
@@ -49,6 +49,8 @@
         .btnKiemTra {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 10px 0;
+            margin-top: 6px;
+            margin-bottom: 30px;
             padding: 10px 20px;
             border-radius: 25px; 
             border: 2px solid black;
@@ -71,7 +73,7 @@
         }
         .lblThongBao {
             padding: 15px;
-            margin-top: 10px;
+            margin-top: 60px;
             margin-bottom: 10px;
             background-color: #f0f8ff; 
             border-left: 5px solid #4CAF50;
@@ -112,19 +114,49 @@
             top: 0;
             opacity: 1;
         }
+        .container {
+            position: relative;
+            background-size: cover;
+            padding: 20px;
+            border: 2px solid black;
+            width: 50%;
+            /*margin: 0 auto;*/
+        }
+        .question-count {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
     </style>
    <script>
        function myChinhTa(word, element) {
-           // Lưu từ đã chọn vào hidden field
-           var txtLoiSai = document.getElementById('<%= txtLoiSai.ClientID %>');
+            // Lấy hidden field lưu các từ đã chọn
+            var txtLoiSai = document.getElementById('<%= txtLoiSai.ClientID %>');
 
-           // Kiểm tra nếu từ chưa được chọn thì thêm từ đó
-           if (!txtLoiSai.value.includes(word)) {
-               txtLoiSai.value += word + ","; // Add word to the hidden field
-           }
+            // Kiểm tra nếu từ đã được chọn (có trong hidden field)
+            if (txtLoiSai.value.includes(word)) {
+                // Nếu từ đã được chọn, bỏ từ đó ra khỏi danh sách
+                var selectedWords = txtLoiSai.value.split(',');
+                var index = selectedWords.indexOf(word);
+                if (index > -1) {
+                    selectedWords.splice(index, 1); // Loại bỏ từ khỏi mảng
+                }
 
-           // Đổi màu từ đã chọn sang màu xanh lá cây
-           element.style.color = "green";
+                // Cập nhật lại hidden field sau khi bỏ từ
+                txtLoiSai.value = selectedWords.join(',');
+
+                // Đổi màu từ về đen (chưa chọn)
+                element.style.color = "black";
+            } else {
+                // Nếu từ chưa được chọn, thêm từ vào danh sách
+                txtLoiSai.value += word + ",";
+
+                // Đổi màu từ đã chọn sang xanh lá cây
+                element.style.color = "blue";
+            }
        }
 
        function showNotification() {
@@ -146,6 +178,9 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
+            <div class="question-count">
+                <asp:Label ID="lblQuestionCount" runat="server" CssClass="lblQuestionCount"></asp:Label>
+            </div>
             <h1>Tìm Lỗi Chính Tả</h1>
             <div class="image-container">
                 <img src="images/chinh-ta.jpg" alt="Your Image" />
@@ -155,8 +190,8 @@
             </div>
             <br />
             <!-- Textbox ẩn để lưu các từ đã chọn -->
-            <input type="hidden" id="txtLoiSai" runat="server" />
-            <asp:Button ID="btnKiemTra" runat="server" Text="Kiểm Tra" CssClass="btnKiemTra" OnClick="btnKiemTra_Click" />
+                <input type="hidden" id="txtLoiSai" runat="server" />
+                <asp:Button ID="btnKiemTra" runat="server" Text="Kiểm Tra" CssClass="btnKiemTra" OnClick="btnKiemTra_Click" />
             <br />
             <asp:Label ID="lblThongBao" runat="server" CssClass="lblThongBao hide"></asp:Label>
         </div>

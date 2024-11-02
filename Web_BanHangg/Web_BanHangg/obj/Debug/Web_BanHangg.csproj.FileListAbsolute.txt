@@ -170,7 +170,6 @@ E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\bin\roslyn\VBCSCompiler.exe
 E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\bin\roslyn\VBCSCompiler.exe.config
 E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.csprojAssemblyReference.cache
 E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.csproj.CoreCompileInputs.cache
 E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.csproj.CopyComplete
 E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.dll
@@ -234,3 +233,4 @@ D:\2024\code-3-anh-em\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanH
 D:\2024\code-3-anh-em\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.csproj.CopyComplete
 D:\2024\code-3-anh-em\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.dll
 D:\2024\code-3-anh-em\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.pdb
+E:\thuc-tap\code-3-anh-em\Web_BanHangg\Web_BanHangg\obj\Debug\Web_BanHangg.csprojAssemblyReference.cache
