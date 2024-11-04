@@ -127,7 +127,7 @@ namespace Web_BanHangg
         {
             // Lấy câu tương ứng với câu hiện tại từ cơ sở dữ liệu
             var cauChinhTa = (from ct in db.tbGameChinhTas
-                              where ct.gamechinhta_id == questionNumber  // Giả sử bạn có ID cho từng câu
+                              where ct.gamechinhta_id == questionNumber 
                               select ct).FirstOrDefault();
 
             if (cauChinhTa != null)
@@ -281,8 +281,7 @@ namespace Web_BanHangg
             }
             lblThongBao.Text = $"Bạn đã hoàn thành game! Số câu đúng: {soCauDung}, Điểm: {diem}";
             lblThongBao.CssClass = "lblThongBao show success";
-            //Response.Redirect("GameChinhTa.aspx");
-            // Thực hiện thêm các hành động khi hoàn thành, như lưu kết quả, v.v.
+            //Response.Redirect("WebManGame.aspx");
         }
 
         protected void UpdateQuestionCount(int current, int total)
