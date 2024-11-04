@@ -35,34 +35,56 @@ namespace Web_BanHangg
                                     where u.taikhoan_tentaikhoan == username
                                     select new
                                     {
-                                        FullName = u.taikhoan_hoten
+                                        FullName = u.taikhoan_hoten,
+                                        ProfileImage = u.taikhoan_hinhanh
                                     }).FirstOrDefault();
 
                     if (userInfo != null)
                     {
                         lblUsername.Text = userInfo.FullName;
+
+                        if (!string.IsNullOrEmpty(userInfo.ProfileImage))
+                        {
+                            imgProfile.ImageUrl = userInfo.ProfileImage;
+                            //Response.Write("<script>console.log('Image URL: " + imgProfile.ImageUrl + "');</script>");
+                        }
+                        else
+                        {
+                            imgProfile.ImageUrl = "~/images/guest.jpg"; 
+                        }
                     }
                     else
                     {
                         lblUsername.Text = username;
+                        imgProfile.ImageUrl = "~/images/guest.jpg"; ;
                     }
                 }
                 else
                 {
-                    lblUsername.Text = "Guest"; 
-                }
-
-                if (Session["UserProfileImage"] != null)
-                {
-                    imgProfile.ImageUrl = Session["UserProfileImage"].ToString();
-                }
-                else
-                {
-                    imgProfile.ImageUrl = "~/images/tdd.jpg";
+                    lblUsername.Text = "Guest";
+                    imgProfile.ImageUrl = "~/images/guest.jpg"; ;
                 }
 
                 string gameId = Request.QueryString["man"];
             }
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Xóa session
+            Session.Clear();
+
+            // Xóa cookie
+            if (Request.Cookies["UserLogin"] != null)
+            {
+                HttpCookie userCookie = new HttpCookie("UserLogin");
+                userCookie.Expires = DateTime.Now.AddDays(-1); // Đặt ngày hết hạn trong quá khứ để xóa cookie
+                Response.Cookies.Add(userCookie);
+            }
+
+            // Chuyển hướng về trang đăng nhập
+            Response.Redirect("Web_DangNhap.aspx");
+        }
+
     }
 }

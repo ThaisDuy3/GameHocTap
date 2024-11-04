@@ -13,7 +13,7 @@ namespace Web_BanHangg
         dbcsdlDataContext db = new dbcsdlDataContext();
         int cauHienTai = 1;  // Câu hiện tại
         int tongSoCau = 3;   // Tổng số câu
-        int soCauDung = 0; // Biến để theo dõi số câu đúng
+        //int soCauDung = 0; // Biến để theo dõi số câu đúng
 
         //Code đầu tiên
         //protected void Page_Load(object sender, EventArgs e)

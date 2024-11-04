@@ -41,7 +41,6 @@ namespace Web_BanHangg
                 userCookie.Expires = DateTime.Now.AddDays(365); // Cookie tồn tại 7 ngày
                 Response.Cookies.Add(userCookie);
 
-                // Chuyển hướng sang trang Game_DuoiHinhBatChu.aspx
                 Response.Redirect("WebManGame.aspx");
             }
             else

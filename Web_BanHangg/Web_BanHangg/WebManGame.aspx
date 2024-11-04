@@ -86,6 +86,30 @@
             color: #007BFF;
             font-weight: bold;
         }
+
+        .logout-button {
+        background-color: #ff4d4d; /* Màu đỏ */
+        color: white; /* Màu chữ trắng */
+        padding: 5px 10px; /* Kích thước nhỏ */
+        border: none; /* Không viền */
+        border-radius: 4px; /* Bo tròn góc nút */
+        font-size: 12px; /* Kích thước chữ nhỏ */
+        cursor: pointer;
+        margin-left: 10px; /* Khoảng cách với tên người dùng */
+        }
+
+        .logout-button:hover {
+            background-color: #ff1a1a; /* Đổi màu đỏ đậm hơn khi hover */
+        }
+
+        .account-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .account-info img {
+            margin-right: 10px; /* Khoảng cách giữa ảnh và tên người dùng */
+        }
     </style>
 
 </head>
@@ -99,6 +123,7 @@
         <div class="account-info">
             <asp:Image ID="imgProfile" runat="server" ImageUrl="~/images/tdd.jpg" Alt="Profile Picture" />
             <asp:Label ID="lblUsername" runat="server" Text="User"></asp:Label>
+            <asp:Button ID="btnLogout" runat="server" Text="Đăng xuất" OnClick="btnLogout_Click" CssClass="logout-button" />
         </div>
 
         <!-- Game Levels Section -->
@@ -119,6 +144,5 @@
             </FooterTemplate>
         </asp:Repeater>
     </form>
-
 </body>
 </html>
